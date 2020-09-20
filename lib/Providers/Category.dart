@@ -3,11 +3,26 @@ import 'package:flutter/cupertino.dart';
 
 class Category extends ChangeNotifier {
   final List<CategoryModel> categories = [
-    CategoryModel(categoryName: 'hi', imgUrl: 'rand'),
-    CategoryModel(categoryName: 'new', imgUrl: 'newww'),
-    CategoryModel(categoryName: 'hia', imgUrl: 'rand'),
-    CategoryModel(categoryName: 'hsdi', imgUrl: 'rand'),
-    CategoryModel(categoryName: 'hsdai', imgUrl: 'rand'),
+    CategoryModel(
+        categoryName: 'hi',
+        imgUrl:
+            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),
+    CategoryModel(
+        categoryName: 'new',
+        imgUrl:
+            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),
+    CategoryModel(
+        categoryName: 'hia',
+        imgUrl:
+            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),
+    CategoryModel(
+        categoryName: 'hsdi',
+        imgUrl:
+            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),
+    CategoryModel(
+        categoryName: 'hsdai',
+        imgUrl:
+            'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),
   ];
 
   void getCategories() {
