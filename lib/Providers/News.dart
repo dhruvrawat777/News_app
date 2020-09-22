@@ -3,9 +3,10 @@ import 'dart:convert';
 import 'package:News_app/models/NewsModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart' show rootBundle;
 
 class News extends ChangeNotifier {
-  final _apiKey = 'da0e2b99feb94df2b9f64b7d3915afa2';
+  final _apiKey = '';
   final List<NewsModel> news = [
     /* NewsModel(
       description:
