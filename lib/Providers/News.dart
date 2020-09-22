@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 class News extends ChangeNotifier {
   final _apiKey = 'da0e2b99feb94df2b9f64b7d3915afa2';
   final List<NewsModel> news = [
-    NewsModel(
+    /* NewsModel(
       description:
           'desccsddfadadsdsadadadsaddsadadsdasadsdfadadsdsaddfadadsdsadadadsaddsadadsdasadsadsdadadsaddsadadsdasadsadsdadsdasdaaaaaaaaaaaaaaaaaaaas',
       title: 'newss',
@@ -43,7 +43,7 @@ class News extends ChangeNotifier {
       title: 'newss',
       imgUrl:
           'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
-    ),
+    ), */
   ];
 
   Future<void> getNews() async {
