@@ -1,4 +1,5 @@
 import 'package:News_app/Providers/Category.dart';
+import 'package:News_app/Providers/News.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
@@ -40,6 +41,8 @@ class _CategoryListerState extends State<CategoryLister> {
             child: GestureDetector(
               onTap: () {
                 print('hi');
+                Provider.of<News>(context, listen: false)
+                    .getNews(categorylist[index].categoryName);
               },
               child: Stack(
                 children: [

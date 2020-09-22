@@ -46,26 +46,38 @@ class News extends ChangeNotifier {
     ), */
   ];
 
-  Future<void> getNews() async {
+  Future<void> getNews(String categoryName) async {
     try {
       print('chala');
-      final String url =
-          'http://newsapi.org/v2/top-headlines?country=in&excludeDomains=stackoverflow.com&sortBy=publishedAt&language=en&apiKey=$_apiKey';
-      final response = await http.get(url);
+      String _url;
+      news.clear();
+      if (categoryName == '') {
+        _url =
+            'https://newsapi.org/v2/top-headlines?country=in&excludeDomains=stackoverflow.com&sortBy=popularity&language=en&apiKey=$_apiKey';
+      } else {
+        _url =
+            'https://newsapi.org/v2/top-headlines?q=$categoryName&sortBy=popularity&language=en&apiKey=$_apiKey';
+      }
+      final response = await http.get(_url);
       var data = json.decode(response.body);
       if (data['status'] == 'ok') {
         data["articles"].forEach((article) {
-          if (article['urlToImage'] != null && article['description'] != null) {
+          if (article['urlToImage'] != null &&
+              article['description'] != null &&
+              article['content'] != null) {
             news.add(NewsModel(
               description: article['description'],
               imgUrl: article['urlToImage'],
               title: article['title'],
+              content: article['content'],
             ));
           }
         });
         print('doneeee');
         notifyListeners();
-      } else {}
+      } else {
+        print('error');
+      }
     } catch (error) {
       throw (error);
     }
