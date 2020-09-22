@@ -68,7 +68,7 @@ class News extends ChangeNotifier {
 
       String _url;
 
-      if (categoryName == '') news.clear();
+      news.clear();
       if (categoryName == '') {
         _url =
             'https://newsapi.org/v2/top-headlines?country=in&excludeDomains=stackoverflow.com&sortBy=popularity&language=en&apiKey=$_apiKey';

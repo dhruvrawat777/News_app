@@ -10,12 +10,19 @@ class NewsLister extends StatefulWidget {
 }
 
 class _NewsListerState extends State<NewsLister> {
+  var _isloaded = false;
+
   @override
   void initState() {
     // TODO: implement initState
     //.of<News>(context, listen: false).getNews();
     Future.delayed(Duration.zero).then((_) {
-      Provider.of<News>(context, listen: false).getNews(context, '');
+      if (_isloaded == false) {
+        Provider.of<News>(context, listen: false).getNews(context, '');
+        setState(() {
+          _isloaded = true;
+        });
+      }
     });
     super.initState();
   }
