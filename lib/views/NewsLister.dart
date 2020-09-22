@@ -10,7 +10,7 @@ class NewsLister extends StatefulWidget {
 }
 
 class _NewsListerState extends State<NewsLister> {
-  @override
+  /*  @override
   void initState() {
     // TODO: implement initState
     //.of<News>(context, listen: false).getNews();
@@ -18,12 +18,14 @@ class _NewsListerState extends State<NewsLister> {
       Provider.of<News>(context, listen: false).getNews('');
     });
     super.initState();
-  }
+  } */
 
   @override
   Widget build(BuildContext context) {
     final pro = Provider.of<News>(context);
+    pro.getNews(context, '');
     final newslist = pro.news;
+
     return Container(
       margin: EdgeInsets.only(top: 10),
       width: MediaQuery.of(context).size.width,

@@ -42,7 +42,7 @@ class _CategoryListerState extends State<CategoryLister> {
               onTap: () {
                 print('hi');
                 Provider.of<News>(context, listen: false)
-                    .getNews(categorylist[index].categoryName);
+                    .getNews(context, categorylist[index].categoryName);
               },
               child: Stack(
                 children: [

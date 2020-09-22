@@ -3,10 +3,9 @@ import 'dart:convert';
 import 'package:News_app/models/NewsModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter/services.dart' show rootBundle;
 
 class News extends ChangeNotifier {
-  final _apiKey = '';
+  String _apiKey = '';
   final List<NewsModel> news = [
     /* NewsModel(
       description:
@@ -47,9 +46,26 @@ class News extends ChangeNotifier {
     ), */
   ];
 
-  Future<void> getNews(String categoryName) async {
+  /*  Future<void> setKey(BuildContext context) async {
+    String data =
+        await DefaultAssetBundle.of(context).loadString("lib/secrets.json");
+    final jsonResult = json.decode(data);
+    _apiKey = jsonResult['api_key'];
+    print(_apiKey);
+  } */
+  void keySet(String k) {
+    _apiKey = k;
+  }
+
+  Future<void> getNews(BuildContext context, String categoryName) async {
     try {
-      print('chala');
+      //  print('chala');
+      String jsondata =
+          await DefaultAssetBundle.of(context).loadString("lib/secrets.json");
+      final jsonResult = json.decode(jsondata);
+      _apiKey = jsonResult['api_key'];
+      // print(_apiKey);
+
       String _url;
       news.clear();
       if (categoryName == '') {
@@ -76,9 +92,7 @@ class News extends ChangeNotifier {
         });
         print('doneeee');
         notifyListeners();
-      } else {
-        print('error');
-      }
+      } else {}
     } catch (error) {
       throw (error);
     }
