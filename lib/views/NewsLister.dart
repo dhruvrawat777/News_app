@@ -10,20 +10,20 @@ class NewsLister extends StatefulWidget {
 }
 
 class _NewsListerState extends State<NewsLister> {
-  /*  @override
+  @override
   void initState() {
     // TODO: implement initState
     //.of<News>(context, listen: false).getNews();
     Future.delayed(Duration.zero).then((_) {
-      Provider.of<News>(context, listen: false).getNews('');
+      Provider.of<News>(context, listen: false).getNews(context, '');
     });
     super.initState();
-  } */
+  }
 
   @override
   Widget build(BuildContext context) {
     final pro = Provider.of<News>(context);
-    pro.getNews(context, '');
+    // pro.getNews(context, '');
     final newslist = pro.news;
 
     return Container(
