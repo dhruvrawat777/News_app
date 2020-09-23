@@ -45,3 +45,4 @@ app.*.map.json
 
 
 /lib/secrets.json
+/android/key.properties
